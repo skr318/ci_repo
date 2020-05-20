@@ -1,8 +1,9 @@
 import requests
 import json
+import pytest
 
 
-class TestAuthToken:
+class TestAdmin:
 	url = "https://sanjev.supporthive.com/api/v2/staff-login/"
 	username = "sanjev.k@happyfox.com"
 	password = "Qwert12345!"
