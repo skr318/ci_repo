@@ -9,8 +9,10 @@ jobs: # A basic unit of work in a run
     steps: # steps that comprise the `build` job
       - checkout
       - run:
+          name: install requirements
           command: |
             sudo pip install -U selenium pytest requests
       - run:
+          name: Test
           command: |
             sudo pytest
