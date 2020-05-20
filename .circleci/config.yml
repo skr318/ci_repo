@@ -24,9 +24,10 @@ jobs: # A basic unit of work in a run
       - run:
           name: Run Test
           command: |
+            circleci tests glob "foo/**/*" "bar/**/*" | xargs -n 1 echo
 #            pytest -s -v -m sanity -o junit_family=xunit2 --junitxml=driver/report.xml
 #     circleci tests split --total=4 test_filenames.txt
-            circleci tests glob "foo/**/*" "bar/**/*" | xargs -n 1 echo
+            
       - store_test_results:
             path: driver
    
