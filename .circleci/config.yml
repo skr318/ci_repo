@@ -10,10 +10,10 @@ jobs: # A basic unit of work in a run
       - checkout
       - run:
           command: |
-            sudo pip install pytest
+            sudo pip install -U selenium pytest 	
       - run:
           command: |
             sudo pwd
-      - run:
-          command: |
-            pytest
+      - test:
+          override:
+            - python pytest circle_main.py
