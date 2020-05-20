@@ -12,3 +12,4 @@ def test_google():
     driver.get("https://www.google.com")
     driver.find_element_by_name("q").send_keys("Sanjev")
     driver.find_element_by_name("q").send_keys(Keys.ENTER)
+    assert driver.title == "Google"
