@@ -1,5 +1,6 @@
 import requests
 import json
+import pytest
 
 
 class TestAdminAuth:
@@ -11,6 +12,8 @@ class TestAdminAuth:
 		"username":username,
 		"password":password
 		}
+	
+	
 	@pytest.mark.hotfix
 	def test_staff_auth():
 		staff_login = requests.request("POST", url, data = payload).text.encode('utf8')
