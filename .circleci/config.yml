@@ -19,7 +19,7 @@ jobs: # A basic unit of work in a run
             sudo pip install -U selenium pytest requests
        
 #       - browser-tools/install-browser-tools
-      - browser-tools/install-chromedriver
+   
       - run:
           name: Test
           command: |
