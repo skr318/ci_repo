@@ -4,7 +4,7 @@ orbs:
   
 jobs: # A basic unit of work in a run
   
-  test: # runs not using Workflows must have a `build` job as entry point 
+  build: # runs not using Workflows must have a `build` job as entry point 
     # directory where steps are run
 #     working_directory: ~/circleci-demo-python-django
     docker: # run the steps with Docker
