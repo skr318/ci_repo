@@ -1,31 +1,23 @@
-version: 2.1 # use CircleCI 2.0
-orbs:
-  browser-tools: circleci/browser-tools@1.0.0
+version: 2.1
   
-jobs: # A basic unit of work in a run
+jobs:
   
-  build: # runs not using Workflows must have a `build` job as entry point 
-    # directory where steps are run
-#     working_directory: ~/circleci-demo-python-django
-    docker: # run the steps with Docker
-      # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
+  build:
+    docker:
       - image: circleci/python:3.6.4
-    parallelism: 2  
+    parallelism: 4  
     steps: # steps that comprise the `build` job
       - checkout
       - run:
           name: Install requirements
           command: |
             sudo pip install -U selenium pytest requests
-       
-#       - browser-tools/install-browser-tools
    
       - run:
           name: Run Test
           command: |
             circleci tests glob "test_admin_auth.py" "test_admin.py" | circleci tests split
 #            pytest -s -v -m sanity -o junit_family=xunit2 --junitxml=driver/report.xml
-#     circleci tests split --total=4 test_filenames.txt
             
       - store_test_results:
             path: driver
