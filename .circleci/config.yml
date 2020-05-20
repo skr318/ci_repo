@@ -3,16 +3,19 @@ orbs:
   browser-tools: circleci/browser-tools@1.0.0
   
 jobs: # A basic unit of work in a run
-  steps:
-      - browser-tools/install-browser-tools
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
+  
   build: # runs not using Workflows must have a `build` job as entry point 
     # directory where steps are run
 #     working_directory: ~/circleci-demo-python-django
     docker: # run the steps with Docker
       # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
       - image: circleci/python:3.6.4
+      
+    steps:
+      - browser-tools/install-browser-tools
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      
     steps: # steps that comprise the `build` job
       - checkout
       - run:
