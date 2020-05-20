@@ -11,27 +11,6 @@ jobs: # A basic unit of work in a run
       - run:
           command: |
             sudo pip install -U selenium pytest requests
-           
-      - run:
-          command: |
-            sudo pwd
-      - run:
-          name: Running X virtual framebuffer
-          command: Xvfb :99 -screen 0 1280x1024x24
-          background: true
-      - run: 
-          command: |
-            cd driver
-            
-      - run: 
-          command: |
-            pwd
-      - run: 
-          command: |
-            ls -a
-      - run:
-          command: |
-            sudo pwd
       - run:
           command: |
             sudo pytest
