@@ -25,4 +25,4 @@ jobs: # A basic unit of work in a run
             cd /
       - run:
           command: |
-          pytest
+            pytest
