@@ -10,8 +10,8 @@ jobs: # A basic unit of work in a run
       - checkout
       - run:
           command: |
-            sudo pip install -U selenium pytest requests chromedriver
-            sudo pip install brew cask
+            sudo pip install -U selenium pytest requests
+            sudo pip install brew
       - run:
           command: |
             sudo pwd
