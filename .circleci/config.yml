@@ -21,7 +21,10 @@ jobs: # A basic unit of work in a run
           background: true
       - run: 
           command: |
-            cd /ci_repo
+            cd /
+      - run: 
+          command: |
+            ls -a
       - run:
           command: |
             sudo pwd
