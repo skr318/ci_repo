@@ -15,7 +15,7 @@ jobs: # A basic unit of work in a run
       - run:
           name: Test
           command: |
-            sudo pytest
+            pytest --junitxml=driver/report.xml
       - store_test_results:
             path: driver
 
