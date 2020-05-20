@@ -12,4 +12,7 @@ jobs: # A basic unit of work in a run
             sudo pip install pytest
       - run:
           command: |
+            sudo pwd
+      - run:
+          command: |
             pytest
