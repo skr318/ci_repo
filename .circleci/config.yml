@@ -15,7 +15,7 @@ jobs: # A basic unit of work in a run
       - run:
           name: Test
           command: |
-            pytest --xunit2=driver/report.xml
+            pytest --junitxml=driver/report.xml
       - store_test_results:
             path: driver
 
