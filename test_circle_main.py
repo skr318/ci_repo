@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 import pytest
 
 # chromedriver = "/"
-driver = webdriver.Chrome(executable_path='/home/circleci/project/chromedriver')
+driver = webdriver.Chrome(executable_path='driver/chromedriver')
 driver.set_window_size(1024, 600)
 # driver.fullscreen_window()
 driver.maximize_window()
