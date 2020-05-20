@@ -15,4 +15,4 @@ def test_staff_auth():
 	staff_login_dict = json.loads(staff_login)
 	staff_auth = staff_login_dict['auth_token']
 	assert len(staff_auth) > 0
-	assert staff_login.status_code == 200
+	assert len(staff_login_dict['refresh_token']) > 0
