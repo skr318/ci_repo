@@ -11,18 +11,18 @@ jobs: # A basic unit of work in a run
       # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
       - image: circleci/python:3.6.4
     parallelism: 2
-      
+  test:    
     steps: # steps that comprise the `build` job
       - checkout
       - run:
-          name: install requirements
+          name: Install requirements
           command: |
             sudo pip install -U selenium pytest requests
        
 #       - browser-tools/install-browser-tools
    
       - run:
-          name: Test
+          name: Run Test
           command: |
 #            pytest -s -v -m sanity -o junit_family=xunit2 --junitxml=driver/report.xml
 #     circleci tests split --total=4 test_filenames.txt
