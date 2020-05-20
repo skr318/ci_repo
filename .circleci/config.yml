@@ -9,4 +9,7 @@ jobs: # A basic unit of work in a run
     steps: # steps that comprise the `build` job
       - run:
           command: |
+            sudo pip install pytest
+      - run:
+          command: |
             pytest circle_main.py
