@@ -14,5 +14,5 @@ def test_staff_auth():
 	staff_login = requests.request("POST", url, data = payload).text.encode('utf8')
 	staff_login_dict = json.loads(staff_login)
 	staff_auth = staff_login_dict['auth_token']
-	assert len(staff_auth) == 0
-	print(staff_auth)
+	assert len(staff_auth) > 0
+	assert staff_login.status_code == 200
