@@ -10,8 +10,7 @@ jobs: # A basic unit of work in a run
     docker: # run the steps with Docker
       # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
       - image: circleci/python:3.6.4
-    parallelism: 2
-  test:    
+    parallelism: 2  
     steps: # steps that comprise the `build` job
       - checkout
       - run:
