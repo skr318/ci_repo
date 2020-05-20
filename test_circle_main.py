@@ -2,8 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import pytest
 
-
-driver = webdriver.Chrome()
+chromedriver = "/chromedriver"
+driver = webdriver.Chrome(chromedriver)
 driver.set_window_size(1024, 600)
 # driver.fullscreen_window()
 driver.maximize_window()
