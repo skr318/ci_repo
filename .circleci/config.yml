@@ -11,21 +11,21 @@ jobs: # A basic unit of work in a run
       # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
       - image: circleci/python:3.6.4
       
-    steps:
-      - browser-tools/install-browser-tools
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
-      
     steps: # steps that comprise the `build` job
       - checkout
       - run:
           name: install requirements
           command: |
             sudo pip install -U selenium pytest requests
+       
+      - browser-tools/install-browser-tools
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - run:
           name: Test
           command: |
             pytest -o junit_family=xunit2 --junitxml=driver/report.xml
       - store_test_results:
             path: driver
+   
 
