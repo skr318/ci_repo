@@ -16,3 +16,6 @@ jobs: # A basic unit of work in a run
           name: Test
           command: |
             sudo pytest
+      - store_test_results:
+            path: driver
+
