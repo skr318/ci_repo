@@ -21,7 +21,11 @@ jobs: # A basic unit of work in a run
           background: true
       - run: 
           command: |
-            cd /
+            cd /driver
+            
+      - run: 
+          command: |
+            pwd
       - run: 
           command: |
             ls -a
