@@ -11,7 +11,7 @@ jobs: # A basic unit of work in a run
       - run:
           command: |
             sudo pip install -U selenium pytest requests
-            sudo pip install brew
+           
       - run:
           command: |
             sudo pwd
@@ -21,10 +21,10 @@ jobs: # A basic unit of work in a run
           background: true
       - run: 
           command: |
-            cd /
+            cd /ci_repo
       - run:
           command: |
-            brew cask install chromedriver
+            sudo pwd
       - run:
           command: |
             pytest
