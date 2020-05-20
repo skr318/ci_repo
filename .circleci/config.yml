@@ -16,4 +16,4 @@ jobs: # A basic unit of work in a run
             sudo pwd
     test:
         override:
-        - python pytest circle_main.py
+        - pytest circle_main.py
