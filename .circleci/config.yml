@@ -10,7 +10,7 @@ jobs: # A basic unit of work in a run
     docker: # run the steps with Docker
       # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
       - image: circleci/python:3.6.4
-    parallelism: 3
+    parallelism: 2
       
     steps: # steps that comprise the `build` job
       - checkout
@@ -24,8 +24,9 @@ jobs: # A basic unit of work in a run
       - run:
           name: Test
           command: |
-            pytest -s -v -m sanity -o junit_family=xunit2 --junitxml=driver/report.xml
+#            pytest -s -v -m sanity -o junit_family=xunit2 --junitxml=driver/report.xml
 #     circleci tests split --total=4 test_filenames.txt
+            circleci tests glob "foo/**/*" "bar/**/*" | xargs -n 1 echo
       - store_test_results:
             path: driver
    
