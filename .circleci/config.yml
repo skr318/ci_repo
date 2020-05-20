@@ -21,7 +21,7 @@ jobs: # A basic unit of work in a run
           background: true
       - run: 
           command: |
-            cd /driver
+            cd driver
             
       - run: 
           command: |
