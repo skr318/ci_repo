@@ -24,8 +24,8 @@ jobs: # A basic unit of work in a run
       - run:
           name: Test
           command: |
-#            pytest -s -v -m sanity -o junit_family=xunit2 --junitxml=driver/report.xml
-    circleci tests split --total=4 test_filenames.txt
+            pytest -s -v -m sanity -o junit_family=xunit2 --junitxml=driver/report.xml
+#     circleci tests split --total=4 test_filenames.txt
       - store_test_results:
             path: driver
    
