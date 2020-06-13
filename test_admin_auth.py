@@ -4,7 +4,6 @@ import pytest
 
 
 class TestAdminAuth:
-
 	url = "https://sanjev.supporthive.com/api/v2/staff-login/"
 	username = "sanjev.k@happyfox.com"
 	password = "Qwert12345!"
