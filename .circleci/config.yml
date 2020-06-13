@@ -1,29 +1,25 @@
 version: 2.1
-
-orbs:
-  python: circleci/python@0.2.1
-
-jobs:
-  build-and-test:
-    executor: python/default
-    steps:
-      - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
-      - run:
-          command: ./manage.py test
-          name: Test
   
-  test:
-    steps:
+jobs:
+  
+  build:
+    docker:
+      - image: circleci/python:3.6.4
+    parallelism: 4  
+    steps: # steps that comprise the `build` job
       - checkout
       - run:
-          name: Runnning tests
+          name: Install requirements
           command: |
-            pytest circle_main.py
+            sudo pip install -U selenium pytest requests
+   
+      - run:
+          name: Run Test
+          command: |
+            circleci tests glob "test_admin_auth.py" "test_admin.py" | circleci tests split | xargs pytest -o junit_family=xunit2 --junitxml=driver/report.xml
+#            pytest -s -v -m sanity -o junit_family=xunit2 --junitxml=driver/report.xml
+            
+      - store_test_results:
+            path: driver
+   
 
-workflows:
-  main:
-    jobs:
-      - build-and-test
